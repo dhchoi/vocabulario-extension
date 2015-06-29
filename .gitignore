@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+*.iml
+node_modules/
+*.crx
+*.pem
+*.zip
+#*
+.#*
+*.pyc
+build/
+npm-debug.log
+
