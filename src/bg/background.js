@@ -11,6 +11,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         chrome.browserAction.setBadgeText({text: String(++counter)});
         sendResponse({result: "ok"});
     }
+    else if(request.action === "log") {
+        console.log(request.message);
+    }
 });
 
 

@@ -2,6 +2,8 @@
   "name": "Vocabular.io Extension",
   "version": "0.0.1",
   "manifest_version": 2,
+  "minimum_chrome_version": "40",
+  "key": "hgmkilegjimffhfpkajmmcpnhjapmfef",
   "description": "This is the extension for vocabular.io!",
   "homepage_url": "http://dhchoi.com",
   "icons": {
@@ -32,7 +34,11 @@
     "contextMenus",
     "notifications",
     "storage",
-    "tabs"
+    "tabs",
+    "identity",
+    "https://www.googleapis.com/*",
+    "https://ssl.gstatic.com/",
+    "https://accounts.google.com/"
   ],
   "content_scripts": [
     {
@@ -44,5 +50,12 @@
         "src/inject/inject.js"
       ]
     }
-  ]
+  ],
+  "oauth2": {
+    "client_id": "803788324725-h7obj1sku5c4gs40u2h5ud7f112vas1e.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/plus.login"
+    ]
+  }
 }
