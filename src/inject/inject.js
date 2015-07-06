@@ -5,7 +5,6 @@ var options = null;
 $(document).ready(function () {
     chrome.storage.sync.get(null, function(items) {
         options = items;
-        console.dir(options);
     });
 
     document.addEventListener("mouseup", function(event) {
@@ -13,6 +12,14 @@ $(document).ready(function () {
             var textSelection = getTextSelection();
             if(textSelection != '') {
                 console.log(textSelection);
+                //chrome.runtime.sendMessage(chrome.runtime.id, {action: "notify", message: textSelection}, function(response) {
+                //    //if (!response.success)
+                //    //    handleError(url);
+                //});
+                chrome.runtime.sendMessage({action: "add", message: textSelection}, function(response) {
+                    console.log("in response");
+                    console.log(response);
+                });
             }
         }
     });
@@ -23,18 +30,20 @@ function getTextSelection() {
 }
 
 function isTriggered(event) {
-    switch(options.triggerKey) {
-        case 'none':
-            return true;
-        case 'ctrl':
-            return event.ctrlKey;
-        case 'alt':
-            return event.altKey;
-        case 'cmd':
-            return event.metaKey;
-        case 'alt+cmd':
-            return event.altKey && event.metaKey;
-        default:
-            return false;
+    if(options) {
+        switch (options.triggerKey) {
+            case 'none':
+                return true;
+            case 'ctrl':
+                return event.ctrlKey;
+            case 'alt':
+                return event.altKey;
+            case 'cmd':
+                return event.metaKey;
+            case 'alt+cmd':
+                return event.altKey && event.metaKey;
+            default:
+                return false;
+        }
     }
 }

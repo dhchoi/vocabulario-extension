@@ -2,10 +2,39 @@
 <link href="browser_action.css" rel="stylesheet">
 
 <div id="mainPopup">
-    <h1>Hello extensionizr!</h1>
-    <p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit ext/browser_action/browser_action.html. The CSS is there, too.</p>
-    <button id="btn">UpdateBadge!</button>
+    <h1>Vocabular.io</h1>
+
+    <div id="container-logged-out">
+        <p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit
+            ext/browser_action/browser_action.html. The CSS is there, too.</p>
+        <!--<button id="btn">UpdateBadge!</button>-->
+        <button id="btn-signup" class="btn btn-primary">Sign Up</button>
+
+        <br><br><br><br>
+
+        <div id="input-email-group" class="form-group">
+            <label for="email" class="control-label">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" autofocus="" class="form-control">
+        </div>
+        <div id="input-password-group" class="form-group">
+            <label for="password" class="control-label">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+        </div>
+        <div class="form-group">
+            <button id="btn-login" class="btn btn-primary">
+                <i class="fa fa-user"></i>Login
+            </button>
+        </div>
+    </div>
+
+    <div id="container-logged-in">
+        <br><br>
+        <button id="btn-logout" class="btn btn-primary">Logout</button>
+    </div>
+
+    <br><br>
     <button id="btn-options">Options</button>
+
 </div>
 
 <script src="browser_action.js"></script>
