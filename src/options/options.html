@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Options</title>
-    <link href="options.css" rel="stylesheet">
+  <title>Options</title>
+  <link href="options.css" rel="stylesheet">
 </head>
-
 <body>
-    Trigger Key:
-    <select id="trigger-key">
-        <option value="none">None</option>
-        <option value="ctrl">Ctrl</option>
-        <option value="alt">Alt</option>
-        <option value="cmd">Cmd</option>
-        <option value="alt+cmd">Alt + Cmd</option>
-    </select>
-
-    <div id="status"></div>
-
-    <button id="save">Save</button>
-
-    <script src="options.js"></script>
+<div class="change-settings">
+  Trigger Key:
+  <select id="trigger-key">
+    <option value="none">None</option>
+    <option value="ctrl">Ctrl</option>
+    <option value="alt">Alt</option>
+    <option value="cmd">Cmd</option>
+    <option value="alt+cmd">Alt + Cmd</option>
+  </select>
+</div>
+<div class="save-settings">
+  <button id="save-btn">Save</button>
+  <div id="save-status-text"></div>
+</div>
+<script src="options.js"></script>
 </body>
 </html>
