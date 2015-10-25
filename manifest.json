@@ -12,7 +12,8 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "js/jquery/jquery.min.js",
+      "src/lib/jquery/jquery.min.js",
+      "src/lib/utils.js",
       "src/bg/background.js"
     ],
     "persistent": true
@@ -40,7 +41,8 @@
         "<all_urls>"
       ],
       "js": [
-        "js/jquery/jquery.min.js",
+        "src/lib/jquery/jquery.min.js",
+        "src/lib/utils.js",
         "src/inject/inject.js"
       ]
     }
